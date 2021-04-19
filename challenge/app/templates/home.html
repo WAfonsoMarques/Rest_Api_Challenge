@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+<header class="masthead">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</header>
+
+<body cz-shortcut-listen="true">
+  <h2 class="text-center"></h1>{% block title %}Welcome{% endblock %}</h2>
+
+  {% block content %}
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-4 offset-md-4">
+            <h3>
+              <br>
+              <center>
+                  Welcome 
+              {% if current_user.name %}
+                  {{ current_user.name }}
+              {% else %}
+                  {{ current_user.username }}
+              {% endif %}
+              </center>
+            </h3>
+          </div>
+      </div>
+  </div>
+  <hr class="half-rule" color="white"/>
+  <section class="py-5">
+    <div class="container">
+      <h2 class="font-weight-light">Thank You For The Challenge</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat reprehenderit expedita.</p>
+    </div>
+  </section>
+
+  {% endblock %}
+
+</body>
+
